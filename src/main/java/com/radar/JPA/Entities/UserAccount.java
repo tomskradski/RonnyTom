@@ -1,4 +1,4 @@
-package com.llc.radar.JPA.Entities;
+package com.radar.JPA.Entities;
 
 import javax.persistence.*;
 
