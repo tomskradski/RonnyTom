@@ -1,6 +1,6 @@
-package com.radar.JPA.Repositories;
+package com.llc.radar.JPA.Repositories;
 
-import com.radar.JPA.Entities.UserAccount;
+import com.llc.radar.JPA.Entities.UserAccount;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
