@@ -1,4 +1,4 @@
-package com.radar;
+package com.llc.radar;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

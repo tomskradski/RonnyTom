@@ -1,7 +1,7 @@
-package com.radar.Controllers;
+package com.llc.radar.Controllers;
 
-import com.radar.JPA.Entities.UserAccount;
-import com.radar.JPA.Repositories.UserAccountRepository;
+import com.llc.radar.JPA.Entities.UserAccount;
+import com.llc.radar.JPA.Repositories.UserAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,16 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
-    private final UserAccountRepository userAccountRepository;
-
-    public TestController(UserAccountRepository userAccountRepository) {
-        this.userAccountRepository = userAccountRepository;
-    }
+    @Autowired
+    private UserAccountRepository userAccountRepository;
 
     @RequestMapping("/createuseraccount")
     public UserAccount createUserAccount(@RequestParam(value="username") String username,
-                                         @RequestParam(value="password") String password,
-                                         @RequestParam(value="isPremiumUser") boolean isPremiumUser){
+                               @RequestParam(value="password") String password,
+                               @RequestParam(value="isPremiumUser") boolean isPremiumUser){
 
         UserAccount userAccount = new UserAccount(username, password, isPremiumUser);
 
