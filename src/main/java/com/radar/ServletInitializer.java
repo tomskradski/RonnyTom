@@ -1,5 +1,6 @@
-package com.llc.radar;
+package com.radar;
 
+import com.radar.RonnyTomApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
