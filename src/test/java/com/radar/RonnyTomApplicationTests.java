@@ -1,4 +1,4 @@
-package com.llc.radar;
+package com.radar;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
