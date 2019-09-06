@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class ReferredOffice {
+public class ReferringOfficeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,9 +18,9 @@ public class ReferredOffice {
     private String state;
     private String zipcode;
 
-    protected ReferredOffice() {}
+    protected ReferringOfficeEntity() {}
 
-    public ReferredOffice(String officeName, String address1, String address2, String city, String state, String zipcode, String officeContactName, String officeNumber, String officeContactNumber, String officeEmail) {
+    public ReferringOfficeEntity(String officeName, String address1, String address2, String city, String state, String zipcode, String officeContactName, String officeNumber, String officeContactNumber, String officeEmail) {
         this.officeName = officeName;
         this.address1 = address1;
         this.address2 = address2;
@@ -127,3 +127,4 @@ public class ReferredOffice {
         this.id = id;
     }
 }
+
