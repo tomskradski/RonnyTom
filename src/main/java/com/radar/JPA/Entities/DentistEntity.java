@@ -3,7 +3,7 @@ package com.radar.JPA.Entities;
 import javax.persistence.*;
 
 @Entity
-public class Dentist {
+public class DentistEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -12,16 +12,16 @@ public class Dentist {
     // referred offices can have many dentists assoc with them
     @ManyToOne
     @JoinColumn(name ="FK_ReferredOfficeId")
-    private ReferredOffice referredOffice;
+    private ReferredOfficeEntity referredOffice;
 
     private String title;
     private String firstname;
     private String lastname;
     private String suffux;
 
-    protected Dentist() {}
+    protected DentistEntity() {}
 
-    public Dentist(ReferredOffice referredOffice, String title, String firstname, String lastname, String suffux) {
+    public DentistEntity(ReferredOfficeEntity referredOffice, String title, String firstname, String lastname, String suffux) {
         this.referredOffice = referredOffice;
         this.title = title;
         this.firstname = firstname;
@@ -37,11 +37,11 @@ public class Dentist {
         this.id = id;
     }
 
-    public ReferredOffice getReferredOffice() {
+    public ReferredOfficeEntity getReferredOffice() {
         return referredOffice;
     }
 
-    public void setReferredOffice(ReferredOffice referredOffice) {
+    public void setReferredOffice(ReferredOfficeEntity referredOffice) {
         this.referredOffice = referredOffice;
     }
 

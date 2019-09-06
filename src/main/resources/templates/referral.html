@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!--    TODO: make title dynamic-->
+    <title>Charleston Endodontics Referral Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{css/main.css}"/>
+
+</head>
+<body>
+<div class="testbox">
+
+    <form action="#" th:action="@{/referral}" th:object="${referral}" method="post">
+        <div class="banner">
+            <!--            TODO: add dynamic office name-->
+            <!--            <h1>Charleston Endodontics Referral Form</h1>-->
+        </div>
+        <h2>Patient Info</h2>
+        <div class="item">
+            <p>Name</p>
+            <div class="name-item">
+                <input type="text" th:field="*{firstName}" placeholder="First"/>
+                <input type="text" th:field="*{lastName}" placeholder="Last"/>
+            </div>
+        </div>
+        <div class="item">
+            <p>Phone</p>
+            <input type="text" name="phone"/>
+        </div>
+        <div class="item">
+            <p>Email</p>
+            <input type="text" name="email"/>
+        </div>
+        <div class="item">
+            <p>Address</p>
+            <input type="text" name="address1" placeholder="Street address" />
+            <input type="text" name="address2" placeholder="Street address line 2" />
+            <div class="city-item">
+                <input type="text" name="city" placeholder="City" />
+                <input type="text" name="state" placeholder="State" />
+                <input type="text" name="zip" placeholder="Postal / Zip code" />
+            </div>
+        </div>
+
+        <h2>Treatment Details</h2>
+        <div class="item">
+            <p>Tooth for Evaluation/Treatment</p>
+            <input type="text" name="tooth"/>
+        </div>
+        <div class="question">
+            <p>Select applicable</p>
+            <div class="question-answer checkbox-item">
+                <div>
+                    <input type="checkbox" value="previousRCT" id="previousRCT" name="toothDetails" />
+                    <label for="previousRCT" class="check"><span>Previous RCT</span></label>
+                    <input type="checkbox" value="localizedPain" id="localizedPain" name="toothDetails" />
+                    <label for="localizedPain" class="check"><span>Localized Pain / Swelling</span></label>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <p>Comments</p>
+            <input type="text" name="comments"/>
+        </div>
+
+        <h2>Location / Dentist</h2>
+        <div class="item">
+            <p>Dentist</p>
+<!--            TODO: make dynamic-->
+            <select>
+                <option value="">Select one</option>
+                <option value="dentist_1">Geoffrey S. Steinkruger, DMD, MS</option>
+                <option value="dentist_2">Krista A. Strange, DMD</option>
+                <option value="dentist_3">Justin R. McAbee, DMD, MSD</option>
+                <option value="dentist_4">Gregory B. Wiggins, DMD</option>
+                <option value="dentist_5">Kenneth T. King, DMD</option>
+                <option value="dentist_6">Matthew D. Morris, DMD</option>
+            </select>
+        </div>
+        <div class="item">
+            <p>Location</p>
+            <!--            TODO: make dynamic-->
+<!--            TODO: list locations based on dentist selected?-->
+            <select>
+                <option value="">Select one</option>
+                <option value="location_1">N. Charleston, 2170 Ashley Phosphate Rd., Ste 600</option>
+                <option value="location_2">West Ashley, 1051 Gardner Rd., Ste B</option>
+                <option value="location_3">Summerville, 508 N. Pine St.</option>
+                <option value="location_4">Summerville, 2080-D Royle Rd.</option>
+            </select>
+<!--            TODO: add phone and fax details here after location is displayed-->
+        </div>
+
+        <div class="btn-block">
+            <button type="submit" value="Submit">Submit Referral</button>
+        </div>
+
+    </form>
+</div>
+</body>
+</html>
