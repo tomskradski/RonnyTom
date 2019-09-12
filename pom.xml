@@ -31,6 +31,12 @@
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 
+<!--		Service oriented architecture-->
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>RELEASE</version>
+		</dependency>
 <!-- 	Enable Hot-swapping, auto browser refresh -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
