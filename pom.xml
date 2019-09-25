@@ -37,6 +37,7 @@
 			<artifactId>modelmapper</artifactId>
 			<version>RELEASE</version>
 		</dependency>
+
 <!-- 	Enable Hot-swapping, auto browser refresh -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -64,6 +65,13 @@
 			<!--<groupId>org.springframework.boot</groupId>-->
 			<!--<artifactId>spring-boot-starter-security</artifactId>-->
 		<!--</dependency>-->
+
+<!--		Network/Email functionality-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+			<version>RELEASE</version>
+		</dependency>
 
 <!--	Application Testing-->
 		<dependency>

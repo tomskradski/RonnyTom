@@ -1,9 +1,6 @@
 package com.radar.JPA.Entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class ReferredOfficeEntity {
@@ -11,16 +8,26 @@ public class ReferredOfficeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name="FK_ReferredPracticeEntityId")
+    private ReferredPracticeEntity referredPracticeEntity;
+
     private String officeName;
     private String address1;
     private String address2;
     private String city;
     private String state;
     private String zipcode;
+    private String officeContactName;
+    private String officeNumber;
+    private String officeContactNumber;
+    private String officeEmail;
 
     protected ReferredOfficeEntity() {}
 
-    public ReferredOfficeEntity(String officeName, String address1, String address2, String city, String state, String zipcode, String officeContactName, String officeNumber, String officeContactNumber, String officeEmail) {
+    public ReferredOfficeEntity(ReferredPracticeEntity referredPractice, String officeName, String address1, String address2, String city, String state, String zipcode, String officeContactName, String officeNumber, String officeContactNumber, String officeEmail) {
+        this.referredPracticeEntity = referredPractice;
         this.officeName = officeName;
         this.address1 = address1;
         this.address2 = address2;
@@ -32,7 +39,6 @@ public class ReferredOfficeEntity {
         this.officeContactNumber = officeContactNumber;
         this.officeEmail = officeEmail;
     }
-
 
     public String getOfficeName() {
         return officeName;
@@ -114,16 +120,19 @@ public class ReferredOfficeEntity {
         this.officeEmail = officeEmail;
     }
 
-    private String officeContactName;
-    private String officeNumber;
-    private String officeContactNumber;
-    private String officeEmail;
-
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public ReferredPracticeEntity getReferredPracticeEntity() {
+        return referredPracticeEntity;
+    }
+
+    public void setReferredPracticeEntity(ReferredPracticeEntity referredPracticeEntity) {
+        this.referredPracticeEntity = referredPracticeEntity;
     }
 }

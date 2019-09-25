@@ -1,33 +1,14 @@
-package com.radar.JPA.Entities;
+package com.radar.Models;
 
-import javax.persistence.*;
+import com.radar.JPA.Entities.ReferredPracticeEntity;
 
-@Entity
-public class DentistEntity {
+public class Dentist {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    // referred offices can have many dentists assoc with them
-    @ManyToOne
-    @JoinColumn(name ="FK_ReferredPracticeEntityId")
-    private ReferredPracticeEntity referredPracticeEntity;
-
+    private Long id;private ReferredPracticeEntity referredPracticeEntity;
     private String title;
     private String firstname;
     private String lastname;
     private String suffux;
-
-    protected DentistEntity() {}
-
-    public DentistEntity(ReferredPracticeEntity referredPracticeEntity, String title, String firstname, String lastname, String suffux) {
-        this.referredPracticeEntity = referredPracticeEntity;
-        this.title = title;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.suffux = suffux;
-    }
 
     public Long getId() {
         return id;
